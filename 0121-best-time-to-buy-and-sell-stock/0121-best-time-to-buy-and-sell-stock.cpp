@@ -15,7 +15,7 @@ class Solution
                 if (prices[right] > prices[left])
                 {
                     if (prices[right] - prices[left] > maxProfit)
-                                 maxProfit = prices[right] - prices[left];
+                                maxProfit = prices[right] - prices[left];
                 }
                 if (prices[right] < prices[left])
                 {
