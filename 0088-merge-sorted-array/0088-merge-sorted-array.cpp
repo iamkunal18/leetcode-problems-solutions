@@ -5,15 +5,6 @@ class Solution
         {
             if (n == 0) return;
 
-            if (m == 0)
-            {
-                for (int i = 0; i < n; i++)
-                {
-                    nums1[i] = nums2[i];
-                }
-                return;
-            }
-
             int i = m - 1;
             int j = n - 1;
             int k = m + n - 1;
