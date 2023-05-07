@@ -1,5 +1,11 @@
 class Solution {
 public:
+    /**
+        taking first row and first column as markers. but we need to make           an extra variable for row[0] marker because of some edge cases.
+        now point our markers for matrix. then first solve matrix in               reverse order(exclude first row and first column). then solve first
+        row and in last solve first column.
+    **/
+    
     void setZeroes(vector<vector<int>>& matrix) {
         int size1 = matrix.size();
         int size2 = matrix[0].size();
