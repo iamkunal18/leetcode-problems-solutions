@@ -2,28 +2,23 @@ class Solution {
 public:
     vector<vector<int>> generate(int numRows) {
         vector<vector<int>> ans;
-        vector<int> temp;
-        
-        temp.push_back(1);
-        
+        vector<int> temp(1, 1);
+                
         ans.push_back(temp);
         
-        for(int i = 0; i < numRows-1; i++) {
+        for(int i = 2; i <= numRows; i++) {
             vector<int> temp2;
+            int temp_variable = 1;
+            temp2.push_back(temp_variable);
             
-            for(int j = 0; j < temp.size(); j++) {
-                
-                if(j == 0) temp2.push_back(temp[j]);
-                else {
-                    temp2.push_back(temp[j] + temp[j-1]);
-                }
-                
+            for(int j = 1; j < i; j++) {
+                // Using concept of nCr
+                temp_variable = temp_variable *  (i-j);
+                temp_variable = temp_variable / j;
+                temp2.push_back(temp_variable);
             }
             
-            temp2.push_back(temp[temp.size()-1]);
-            ans.push_back(temp2);
-            temp = temp2;
-            
+            ans.push_back(temp2);            
         }
         
         return ans;
